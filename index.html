@@ -1,0 +1,2549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VELOCITY — 50 coches legendarios</title>
+
+<meta name="description" content="Los 50 coches más icónicos, espectaculares y deseados del mundo.">
+
+<style>
+
+/* =========================================================
+   VELOCITY — ESTILOS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+    --red:#ff2020;
+    --red2:#ff4b2b;
+    --orange:#ff8a00;
+    --black:#050505;
+    --dark:#0a0a0a;
+    --dark2:#111111;
+    --dark3:#181818;
+    --gray:#8c8c8c;
+    --white:#ffffff;
+    --green:#29e88b;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',Arial,sans-serif;
+    background:
+        radial-gradient(circle at 50% -10%, rgba(255,30,30,.18), transparent 35%),
+        #050505;
+    color:white;
+    min-height:100vh;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar{
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050505;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--red),var(--orange));
+    border-radius:20px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    background:rgba(5,5,5,.82);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.logo{
+    font-size:26px;
+    font-weight:900;
+    letter-spacing:3px;
+}
+
+.logo span{
+    color:var(--red);
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+.header-stats{
+    display:flex;
+    gap:12px;
+}
+
+.stat-mini{
+    padding:9px 13px;
+    border-radius:10px;
+    background:#111;
+    border:1px solid #222;
+    font-size:11px;
+    color:#aaa;
+}
+
+.stat-mini strong{
+    color:white;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:70px 7%;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:650px;
+    height:650px;
+    right:-200px;
+    top:-100px;
+    background:radial-gradient(circle,rgba(255,30,30,.25),transparent 68%);
+    filter:blur(10px);
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+    opacity:.11;
+    background-image:
+        linear-gradient(#fff 1px,transparent 1px),
+        linear-gradient(90deg,#fff 1px,transparent 1px);
+    background-size:70px 70px;
+    transform:perspective(500px) rotateX(60deg) scale(1.8);
+    transform-origin:center bottom;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 15px;
+    border:1px solid rgba(255,50,50,.4);
+    border-radius:50px;
+    background:rgba(255,30,30,.08);
+    color:#ff7777;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:24px;
+}
+
+.badge i{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#ff3333;
+    box-shadow:0 0 12px red;
+}
+
+.hero h1{
+    font-size:clamp(55px,8vw,105px);
+    line-height:.87;
+    letter-spacing:-6px;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.hero h1 span{
+    color:transparent;
+    -webkit-text-stroke:1px #fff;
+}
+
+.hero p{
+    margin-top:30px;
+    max-width:680px;
+    color:#999;
+    line-height:1.7;
+    font-size:15px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:35px;
+}
+
+.btn{
+    border:0;
+    cursor:pointer;
+    padding:15px 22px;
+    border-radius:10px;
+    font-weight:800;
+    color:white;
+    background:linear-gradient(135deg,var(--red),#a80000);
+    box-shadow:0 10px 30px rgba(255,0,0,.18);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 40px rgba(255,0,0,.35);
+}
+
+.btn.secondary{
+    background:#151515;
+    border:1px solid #2a2a2a;
+    box-shadow:none;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    width:min(1450px,90%);
+    margin:auto;
+    padding:70px 0;
+}
+
+.section-title{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:36px;
+    letter-spacing:-2px;
+}
+
+.section-title p{
+    color:#777;
+    font-size:13px;
+}
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.controls{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.search{
+    position:relative;
+}
+
+.search input{
+    width:100%;
+    padding:17px 20px 17px 48px;
+    background:#101010;
+    border:1px solid #242424;
+    border-radius:12px;
+    color:white;
+    outline:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.search input:focus{
+    border-color:#ff3030;
+    box-shadow:0 0 0 3px rgba(255,30,30,.08);
+}
+
+.search-icon{
+    position:absolute;
+    left:18px;
+    top:15px;
+    font-size:18px;
+    color:#666;
+}
+
+.filters{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.filter{
+    cursor:pointer;
+    border:1px solid #242424;
+    background:#101010;
+    color:#888;
+    padding:11px 15px;
+    border-radius:9px;
+    font-size:12px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.filter:hover,
+.filter.active{
+    background:#ff2020;
+    color:white;
+    border-color:#ff2020;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.cars-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.car-card{
+    position:relative;
+    overflow:hidden;
+    min-height:390px;
+    background:#0e0e0e;
+    border:1px solid #202020;
+    border-radius:18px;
+    cursor:pointer;
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        border-color .3s,
+        box-shadow .3s;
+}
+
+.car-card:hover{
+    transform:translateY(-9px);
+    border-color:rgba(255,40,40,.5);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5),
+        0 0 35px rgba(255,20,20,.08);
+}
+
+.car-image{
+    position:relative;
+    height:245px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 50%,#252525,#090909 70%);
+}
+
+.car-image:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        transparent 55%,
+        rgba(5,5,5,.95) 100%
+    );
+    pointer-events:none;
+}
+
+.car-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .7s;
+}
+
+.car-card:hover .car-image img{
+    transform:scale(1.08);
+}
+
+.rank{
+    position:absolute;
+    top:14px;
+    left:14px;
+    z-index:2;
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.12);
+    padding:7px 10px;
+    border-radius:7px;
+    font-size:10px;
+    font-weight:800;
+}
+
+.heart{
+    position:absolute;
+    z-index:5;
+    top:12px;
+    right:12px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(0,0,0,.55);
+    color:white;
+    cursor:pointer;
+    font-size:17px;
+    transition:.25s;
+}
+
+.heart:hover{
+    background:#ff2020;
+    transform:scale(1.1);
+}
+
+.heart.liked{
+    background:#ff2020;
+}
+
+.car-info{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:20px;
+    z-index:3;
+}
+
+.brand{
+    color:#ff4a4a;
+    text-transform:uppercase;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.car-name{
+    font-size:22px;
+    font-weight:900;
+    margin-top:5px;
+}
+
+.car-type{
+    color:#777;
+    font-size:11px;
+    margin-top:7px;
+}
+
+.card-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:15px;
+}
+
+.hp{
+    font-size:12px;
+    color:#aaa;
+}
+
+.hp strong{
+    color:white;
+}
+
+.more{
+    color:#ff4444;
+    font-size:11px;
+    font-weight:800;
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty{
+    display:none;
+    padding:70px;
+    text-align:center;
+    color:#666;
+    grid-column:1/-1;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(15px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    position:relative;
+    width:min(1050px,100%);
+    max-height:92vh;
+    overflow:auto;
+    background:#0d0d0d;
+    border:1px solid #2b2b2b;
+    border-radius:22px;
+    box-shadow:0 40px 100px #000;
+    animation:modalIn .35s ease;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:scale(.94) translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:18px;
+    z-index:10;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid #333;
+    background:rgba(0,0,0,.7);
+    color:white;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.modal-image{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    background:#111;
+}
+
+.modal-content{
+    padding:35px;
+}
+
+.modal-brand{
+    color:#ff3c3c;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.modal-title{
+    font-size:50px;
+    letter-spacing:-3px;
+    margin:5px 0 10px;
+}
+
+.modal-description{
+    color:#aaa;
+    line-height:1.7;
+    font-size:14px;
+    max-width:850px;
+}
+
+.spec-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:28px;
+}
+
+.spec{
+    padding:18px;
+    background:#151515;
+    border:1px solid #222;
+    border-radius:12px;
+}
+
+.spec label{
+    display:block;
+    color:#666;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:7px;
+}
+
+.spec strong{
+    font-size:17px;
+}
+
+.modal-tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:22px;
+}
+
+.tag{
+    padding:8px 11px;
+    background:#171717;
+    border:1px solid #292929;
+    border-radius:20px;
+    color:#aaa;
+    font-size:10px;
+}
+
+/* =========================================================
+   BRAND SECTION
+========================================================= */
+
+.brands{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:10px;
+}
+
+.brand-box{
+    padding:22px 10px;
+    text-align:center;
+    border:1px solid #1e1e1e;
+    border-radius:12px;
+    background:#0c0c0c;
+    color:#777;
+    font-size:11px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.brand-box:hover{
+    color:white;
+    border-color:#ff3030;
+    background:#131313;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    border-top:1px solid #181818;
+    padding:45px 5%;
+    text-align:center;
+    color:#555;
+    font-size:11px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .cars-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .brands{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    .header-stats{
+        display:none;
+    }
+
+    .hero{
+        min-height:550px;
+        padding:60px 6%;
+    }
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:-4px;
+    }
+
+    .controls{
+        grid-template-columns:1fr;
+    }
+
+    .cars-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .spec-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .modal-title{
+        font-size:38px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .section{
+        width:92%;
+    }
+
+    .cars-grid{
+        grid-template-columns:1fr;
+    }
+
+    .car-card{
+        min-height:400px;
+    }
+
+    .brands{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .modal{
+        padding:10px;
+    }
+
+    .modal-image{
+        height:240px;
+    }
+
+    .modal-content{
+        padding:25px;
+    }
+
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#050505;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:20px;
+    transition:.6s;
+}
+
+.loading.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+.loader{
+    width:55px;
+    height:55px;
+    border:3px solid #222;
+    border-top-color:#ff2020;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.loading span{
+    font-size:11px;
+    letter-spacing:4px;
+    color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ======================================================
+     LOADING
+======================================================= -->
+
+<div class="loading" id="loading">
+    <div class="loader"></div>
+    <span>VELOCITY</span>
+</div>
+
+<!-- ======================================================
+     HEADER
+======================================================= -->
+
+<header>
+
+    <div class="logo">
+        VELO<span>CITY</span>
+    </div>
+
+    <nav>
+        <a href="#coches">COCHES</a>
+        <a href="#marcas">MARCAS</a>
+        <a href="#sobre">SOBRE</a>
+    </nav>
+
+    <div class="header-stats">
+        <div class="stat-mini">
+            <strong id="totalCars">50</strong> COCHES
+        </div>
+
+        <div class="stat-mini">
+            ♥ <strong id="favoriteCount">0</strong>
+        </div>
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            <i></i>
+            AUTOMOTIVE COLLECTION
+        </div>
+
+        <h1>
+            DREAM<br>
+            <span>MACHINES</span>
+        </h1>
+
+        <p>
+            Una colección interactiva con 50 de los coches más
+            famosos, deseados e icónicos del mundo.
+            Ferrari, Lamborghini, Porsche, McLaren, Bugatti,
+            Aston Martin y muchas más.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="btn" onclick="document.getElementById('coches').scrollIntoView()">
+                EXPLORAR COCHES →
+            </button>
+
+            <button class="btn secondary" onclick="showFavorites()">
+                ♥ MIS FAVORITOS
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     CARS
+======================================================= -->
+
+<section class="section" id="coches">
+
+    <div class="section-title">
+
+        <div>
+            <h2>50 máquinas legendarias</h2>
+            <p>Haz clic en cualquier coche para descubrirlo.</p>
+        </div>
+
+        <p id="resultsText">50 resultados</p>
+
+    </div>
+
+
+    <div class="controls">
+
+        <div class="search">
+
+            <span class="search-icon">⌕</span>
+
+            <input
+                id="search"
+                type="text"
+                placeholder="Buscar Ferrari, Lamborghini, Porsche..."
+            >
+
+        </div>
+
+        <div class="filters" id="filters">
+
+            <button class="filter active" data-brand="Todos">
+                TODOS
+            </button>
+
+            <button class="filter" data-brand="Ferrari">
+                Ferrari
+            </button>
+
+            <button class="filter" data-brand="Lamborghini">
+                Lamborghini
+            </button>
+
+            <button class="filter" data-brand="Porsche">
+                Porsche
+            </button>
+
+            <button class="filter" data-brand="McLaren">
+                McLaren
+            </button>
+
+            <button class="filter" data-brand="Bugatti">
+                Bugatti
+            </button>
+
+            <button class="filter" data-brand="Aston Martin">
+                Aston Martin
+            </button>
+
+            <button class="filter" data-brand="Mercedes">
+                Mercedes
+            </button>
+
+            <button class="filter" data-brand="BMW">
+                BMW
+            </button>
+
+            <button class="filter" data-brand="Audi">
+                Audi
+            </button>
+
+            <button class="filter" data-brand="Ford">
+                Ford
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="cars-grid" id="carsGrid"></div>
+
+    <div class="empty" id="empty">
+        <h3>No encontramos ese coche</h3>
+        <p>Prueba con otra marca o modelo.</p>
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     BRANDS
+======================================================= -->
+
+<section class="section" id="marcas">
+
+    <div class="section-title">
+        <div>
+            <h2>Marcas legendarias</h2>
+            <p>Los fabricantes que han construido algunas de las máquinas más reconocibles.</p>
+        </div>
+    </div>
+
+    <div class="brands">
+
+        <div class="brand-box">FERRARI</div>
+        <div class="brand-box">LAMBORGHINI</div>
+        <div class="brand-box">PORSCHE</div>
+        <div class="brand-box">McLAREN</div>
+        <div class="brand-box">BUGATTI</div>
+        <div class="brand-box">ASTON MARTIN</div>
+        <div class="brand-box">MERCEDES-AMG</div>
+        <div class="brand-box">BMW</div>
+        <div class="brand-box">AUDI</div>
+        <div class="brand-box">FORD</div>
+        <div class="brand-box">KOENIGSEGG</div>
+        <div class="brand-box">PAGANI</div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     ABOUT
+======================================================= -->
+
+<section class="section" id="sobre">
+
+    <div class="section-title">
+        <div>
+            <h2>Más que una colección</h2>
+            <p>Explora, compara y descubre.</p>
+        </div>
+    </div>
+
+    <div style="
+        max-width:800px;
+        color:#888;
+        line-height:1.8;
+        font-size:14px;
+    ">
+
+        VELOCITY está diseñada como una pequeña enciclopedia
+        visual de coches deportivos, superdeportivos e iconos
+        automovilísticos.
+
+        <br><br>
+
+        Pulsa sobre cualquier coche para ver sus características,
+        potencia, motor, velocidad, tipo y una descripción.
+
+        <br><br>
+
+        También puedes utilizar el buscador, filtrar por fabricante
+        y guardar tus coches favoritos.
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     MODAL
+======================================================= -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button class="close" onclick="closeModal()">×</button>
+
+        <img
+            id="modalImage"
+            class="modal-image"
+            src=""
+            alt=""
+        >
+
+        <div class="modal-content">
+
+            <div class="modal-brand" id="modalBrand"></div>
+
+            <h2 class="modal-title" id="modalTitle"></h2>
+
+            <p class="modal-description" id="modalDescription"></p>
+
+            <div class="spec-grid">
+
+                <div class="spec">
+                    <label>Motor</label>
+                    <strong id="modalEngine"></strong>
+                </div>
+
+                <div class="spec">
+                    <label>Potencia</label>
+                    <strong id="modalPower"></strong>
+                </div>
+
+                <div class="spec">
+                    <label>Velocidad máxima</label>
+                    <strong id="modalSpeed"></strong>
+                </div>
+
+                <div class="spec">
+                    <label>0-100 km/h</label>
+                    <strong id="modalAccel"></strong>
+                </div>
+
+                <div class="spec">
+                    <label>Tracción</label>
+                    <strong id="modalDrive"></strong>
+                </div>
+
+                <div class="spec">
+                    <label>Carrocería</label>
+                    <strong id="modalBody"></strong>
+                </div>
+
+                <div class="spec">
+                    <label>Año</label>
+                    <strong id="modalYear"></strong>
+                </div>
+
+                <div class="spec">
+                    <label>Combustible</label>
+                    <strong id="modalFuel"></strong>
+                </div>
+
+            </div>
+
+            <div class="modal-tags" id="modalTags"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+    <strong>VELOCITY</strong>
+    — DREAM MACHINES
+
+    <br><br>
+
+    Proyecto web de colección automovilística.
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   DATOS DE LOS 50 COCHES
+========================================================= */
+
+const cars = [
+
+{
+id:1,
+brand:"Ferrari",
+name:"LaFerrari",
+type:"Hypercar",
+engine:"V12 6.3L + eléctrico",
+power:"963 CV",
+speed:"350 km/h",
+accel:"< 3.0 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2013",
+fuel:"Híbrido",
+description:"Uno de los Ferrari más exclusivos de la era moderna. Combina un V12 atmosférico con un sistema híbrido derivado de la tecnología de competición.",
+tags:["V12","Híbrido","Hypercar","Ferrari"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20LaFerrari.jpg"
+},
+
+{
+id:2,
+brand:"Ferrari",
+name:"F40",
+type:"Supercar",
+engine:"V8 2.9L Biturbo",
+power:"478 CV",
+speed:"324 km/h",
+accel:"4.1 s",
+drive:"Trasera",
+body:"Coupé",
+year:"1987",
+fuel:"Gasolina",
+description:"Uno de los Ferrari más míticos de todos los tiempos. Ligero, radical y construido con una clara filosofía de competición.",
+tags:["V8","Turbo","Icono","Clásico"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20F40.jpg"
+},
+
+{
+id:3,
+brand:"Ferrari",
+name:"F50",
+type:"Supercar",
+engine:"V12 4.7L",
+power:"520 CV",
+speed:"325 km/h",
+accel:"3.9 s",
+drive:"Trasera",
+body:"Targa",
+year:"1995",
+fuel:"Gasolina",
+description:"Un Ferrari de producción limitada cuyo motor V12 tiene raíces tecnológicas relacionadas con la Fórmula 1.",
+tags:["V12","Targa","Clásico"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20F50.jpg"
+},
+
+{
+id:4,
+brand:"Ferrari",
+name:"Enzo",
+type:"Hypercar",
+engine:"V12 6.0L",
+power:"660 CV",
+speed:"350 km/h",
+accel:"3.65 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2002",
+fuel:"Gasolina",
+description:"Creado como homenaje al fundador de Ferrari y con una fuerte inspiración en la competición.",
+tags:["V12","Carbono","Hypercar"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20Enzo.jpg"
+},
+
+{
+id:5,
+brand:"Ferrari",
+name:"488 GTB",
+type:"Supercar",
+engine:"V8 3.9L Biturbo",
+power:"670 CV",
+speed:"330 km/h",
+accel:"3.0 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2015",
+fuel:"Gasolina",
+description:"El 488 GTB sustituyó al 458 y llevó a Ferrari a una nueva generación de motores V8 turbo.",
+tags:["V8","Biturbo","Supercar"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20488GTB.jpg"
+},
+
+{
+id:6,
+brand:"Ferrari",
+name:"SF90 Stradale",
+type:"Hypercar",
+engine:"V8 4.0L + 3 motores eléctricos",
+power:"1.000 CV",
+speed:"340 km/h",
+accel:"2.5 s",
+drive:"Integral",
+body:"Coupé",
+year:"2019",
+fuel:"Híbrido enchufable",
+description:"El SF90 Stradale combina un V8 biturbo con tres motores eléctricos para superar los 1.000 CV.",
+tags:["1000 CV","Híbrido","AWD"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20SF90%20Stradale.jpg"
+},
+
+{
+id:7,
+brand:"Ferrari",
+name:"296 GTB",
+type:"Supercar",
+engine:"V6 3.0L Biturbo + eléctrico",
+power:"830 CV",
+speed:"330 km/h",
+accel:"2.9 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2021",
+fuel:"Híbrido",
+description:"El 296 GTB representa una nueva generación de deportivos Ferrari con arquitectura V6 híbrida.",
+tags:["V6","Híbrido","830 CV"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20296%20GTB.jpg"
+},
+
+{
+id:8,
+brand:"Ferrari",
+name:"812 Superfast",
+type:"Gran Turismo",
+engine:"V12 6.5L",
+power:"800 CV",
+speed:"340 km/h",
+accel:"2.9 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2017",
+fuel:"Gasolina",
+description:"Un Ferrari GT equipado con uno de los grandes protagonistas de la marca: un V12 atmosférico.",
+tags:["V12","GT","800 CV"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20812%20Superfast.jpg"
+},
+
+{
+id:9,
+brand:"Ferrari",
+name:"Roma",
+type:"Gran Turismo",
+engine:"V8 3.9L Biturbo",
+power:"620 CV",
+speed:"320 km/h",
+accel:"3.4 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2019",
+fuel:"Gasolina",
+description:"El Ferrari Roma recupera una interpretación moderna del estilo italiano de los grandes GT.",
+tags:["V8","GT","Elegancia"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20Roma.jpg"
+},
+
+{
+id:10,
+brand:"Ferrari",
+name:"Purosangue",
+type:"SUV / FUV",
+engine:"V12 6.5L",
+power:"725 CV",
+speed:"310 km/h",
+accel:"3.3 s",
+drive:"Integral",
+body:"4 puertas",
+year:"2022",
+fuel:"Gasolina",
+description:"El Purosangue es la interpretación de Ferrari de un automóvil de cuatro puertas y cuatro plazas con filosofía deportiva.",
+tags:["V12","4 puertas","AWD"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ferrari%20Purosangue.jpg"
+},
+
+/* LAMBORGHINI */
+
+{
+id:11,
+brand:"Lamborghini",
+name:"Aventador",
+type:"Supercar",
+engine:"V12 6.5L",
+power:"770 CV",
+speed:"350 km/h",
+accel:"2.8 s",
+drive:"Integral",
+body:"Coupé",
+year:"2011",
+fuel:"Gasolina",
+description:"El Aventador se convirtió en uno de los Lamborghini más reconocibles del siglo XXI.",
+tags:["V12","AWD","Icono"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lamborghini%20Aventador.jpg"
+},
+
+{
+id:12,
+brand:"Lamborghini",
+name:"Huracán",
+type:"Supercar",
+engine:"V10 5.2L",
+power:"640 CV",
+speed:"325 km/h",
+accel:"2.9 s",
+drive:"Integral",
+body:"Coupé",
+year:"2014",
+fuel:"Gasolina",
+description:"El Huracán llevó el V10 de Lamborghini a una nueva generación con electrónica y aerodinámica avanzada.",
+tags:["V10","AWD","Supercar"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lamborghini%20Huracan.jpg"
+},
+
+{
+id:13,
+brand:"Lamborghini",
+name:"Revuelto",
+type:"Híbrido V12",
+engine:"V12 6.5L + eléctricos",
+power:"1.015 CV",
+speed:"350+ km/h",
+accel:"2.5 s",
+drive:"Integral",
+body:"Coupé",
+year:"2023",
+fuel:"Híbrido enchufable",
+description:"El Revuelto combina el tradicional V12 de Lamborghini con tecnología híbrida enchufable.",
+tags:["V12","Híbrido","1015 CV"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lamborghini%20Revuelto.jpg"
+},
+
+{
+id:14,
+brand:"Lamborghini",
+name:"Urus",
+type:"Super SUV",
+engine:"V8 4.0L Biturbo",
+power:"650 CV",
+speed:"305 km/h",
+accel:"3.6 s",
+drive:"Integral",
+body:"SUV",
+year:"2018",
+fuel:"Gasolina",
+description:"El Urus convirtió el concepto de SUV de altas prestaciones en una parte fundamental de la gama Lamborghini.",
+tags:["V8","SUV","AWD"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lamborghini%20Urus.jpg"
+},
+
+{
+id:15,
+brand:"Lamborghini",
+name:"Miura",
+type:"Clásico",
+engine:"V12 4.0L",
+power:"385 CV",
+speed:"280 km/h",
+accel:"5.0 s",
+drive:"Trasera",
+body:"Coupé",
+year:"1966",
+fuel:"Gasolina",
+description:"El Miura es uno de los grandes iconos históricos del automóvil y ayudó a definir el concepto moderno de superdeportivo.",
+tags:["V12","Clásico","Icono"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lamborghini%20Miura.jpg"
+},
+
+{
+id:16,
+brand:"Lamborghini",
+name:"Countach",
+type:"Supercar clásico",
+engine:"V12 5.2L",
+power:"455 CV",
+speed:"295 km/h",
+accel:"4.9 s",
+drive:"Trasera",
+body:"Coupé",
+year:"1974",
+fuel:"Gasolina",
+description:"Sus puertas de tijera y su diseño angular lo convirtieron en uno de los coches más famosos de la historia.",
+tags:["V12","Puertas tijera","Clásico"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lamborghini%20Countach.jpg"
+},
+
+/* PORSCHE */
+
+{
+id:17,
+brand:"Porsche",
+name:"911 GT3 RS",
+type:"Track Car",
+engine:"Flat-6 4.0L",
+power:"525 CV",
+speed:"296 km/h",
+accel:"3.2 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2022",
+fuel:"Gasolina",
+description:"Una de las versiones más radicales del Porsche 911, diseñada con una enorme atención a la aerodinámica.",
+tags:["Flat-6","Circuito","GT3"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Porsche%20911%20GT3%20RS.jpg"
+},
+
+{
+id:18,
+brand:"Porsche",
+name:"911 Turbo S",
+type:"Supercar",
+engine:"Flat-6 3.7L Biturbo",
+power:"650 CV",
+speed:"330 km/h",
+accel:"2.7 s",
+drive:"Integral",
+body:"Coupé",
+year:"2020",
+fuel:"Gasolina",
+description:"Una combinación de prestaciones brutales y utilización diaria que caracteriza al 911 Turbo S.",
+tags:["Turbo","AWD","911"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Porsche%20911%20Turbo%20S.jpg"
+},
+
+{
+id:19,
+brand:"Porsche",
+name:"Carrera GT",
+type:"Supercar",
+engine:"V10 5.7L",
+power:"612 CV",
+speed:"334 km/h",
+accel:"3.9 s",
+drive:"Trasera",
+body:"Roadster",
+year:"2004",
+fuel:"Gasolina",
+description:"Un Porsche de producción limitada con un V10 atmosférico y una reputación especial entre los aficionados.",
+tags:["V10","Manual","Carbono"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Porsche%20Carrera%20GT.jpg"
+},
+
+{
+id:20,
+brand:"Porsche",
+name:"918 Spyder",
+type:"Hypercar",
+engine:"V8 4.6L + eléctricos",
+power:"887 CV",
+speed:"345 km/h",
+accel:"2.6 s",
+drive:"Integral",
+body:"Spyder",
+year:"2013",
+fuel:"Híbrido",
+description:"El 918 Spyder fue uno de los tres grandes hypercars híbridos de su generación.",
+tags:["V8","Híbrido","Hypercar"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Porsche%20918%20Spyder.jpg"
+},
+
+{
+id:21,
+brand:"Porsche",
+name:"Taycan Turbo S",
+type:"Eléctrico",
+engine:"Motores eléctricos duales",
+power:"761 CV",
+speed:"260 km/h",
+accel:"2.8 s",
+drive:"Integral",
+body:"Berlina",
+year:"2019",
+fuel:"Eléctrico",
+description:"El Taycan representa la entrada de Porsche en los deportivos eléctricos de altas prestaciones.",
+tags:["EV","AWD","Turbo S"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Porsche%20Taycan.jpg"
+},
+
+/* McLAREN */
+
+{
+id:22,
+brand:"McLaren",
+name:"P1",
+type:"Hypercar",
+engine:"V8 3.8L Biturbo + eléctrico",
+power:"916 CV",
+speed:"350 km/h",
+accel:"2.8 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2013",
+fuel:"Híbrido",
+description:"El McLaren P1 combina ingeniería de competición, aerodinámica activa y un sistema híbrido.",
+tags:["V8","Híbrido","Hypercar"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/McLaren%20P1.jpg"
+},
+
+{
+id:23,
+brand:"McLaren",
+name:"720S",
+type:"Supercar",
+engine:"V8 4.0L Biturbo",
+power:"720 CV",
+speed:"341 km/h",
+accel:"2.9 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2017",
+fuel:"Gasolina",
+description:"El 720S destacó por su relación entre peso, potencia, aerodinámica y tecnología.",
+tags:["V8","720 CV","Carbono"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/McLaren%20720S%2017.jpg"
+},
+
+{
+id:24,
+brand:"McLaren",
+name:"765LT",
+type:"Track Supercar",
+engine:"V8 4.0L Biturbo",
+power:"765 CV",
+speed:"330 km/h",
+accel:"2.8 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2020",
+fuel:"Gasolina",
+description:"Una versión especialmente enfocada al rendimiento del McLaren 720S.",
+tags:["V8","Longtail","Track"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/McLaren%20765LT.jpg"
+},
+
+{
+id:25,
+brand:"McLaren",
+name:"Senna",
+type:"Hypercar",
+engine:"V8 4.0L Biturbo",
+power:"800 CV",
+speed:"335 km/h",
+accel:"2.8 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2018",
+fuel:"Gasolina",
+description:"Diseñado con una obsesión por la aerodinámica y el rendimiento en circuito.",
+tags:["V8","Aerodinámica","Senna"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/McLaren%20Senna.jpg"
+},
+
+/* BUGATTI */
+
+{
+id:26,
+brand:"Bugatti",
+name:"Chiron",
+type:"Hypercar",
+engine:"W16 8.0L Quad-Turbo",
+power:"1.500 CV",
+speed:"420 km/h",
+accel:"2.4 s",
+drive:"Integral",
+body:"Coupé",
+year:"2016",
+fuel:"Gasolina",
+description:"El Chiron llevó el concepto de hypercar de Bugatti a cifras extraordinarias de potencia y velocidad.",
+tags:["W16","1500 CV","420 km/h"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bugatti%20Chiron.jpg"
+},
+
+{
+id:27,
+brand:"Bugatti",
+name:"Veyron",
+type:"Hypercar",
+engine:"W16 8.0L Quad-Turbo",
+power:"1.001 CV",
+speed:"407 km/h",
+accel:"2.5 s",
+drive:"Integral",
+body:"Coupé",
+year:"2005",
+fuel:"Gasolina",
+description:"El Veyron marcó un antes y un después en la ingeniería de coches de producción.",
+tags:["W16","1000 CV","Icono"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bugatti%20Veyron.jpg"
+},
+
+{
+id:28,
+brand:"Bugatti",
+name:"Divo",
+type:"Hypercar",
+engine:"W16 8.0L Quad-Turbo",
+power:"1.500 CV",
+speed:"380 km/h",
+accel:"2.4 s",
+drive:"Integral",
+body:"Coupé",
+year:"2018",
+fuel:"Gasolina",
+description:"El Divo está orientado a una conducción más enfocada al comportamiento dinámico.",
+tags:["W16","Limitado","Aerodinámica"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bugatti%20Divo.jpg"
+},
+
+/* ASTON MARTIN */
+
+{
+id:29,
+brand:"Aston Martin",
+name:"Valkyrie",
+type:"Hypercar",
+engine:"V12 6.5L",
+power:"1.160 CV",
+speed:"350+ km/h",
+accel:"≈2.5 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2021",
+fuel:"Híbrido",
+description:"El Valkyrie nace de una colaboración de ingeniería con una filosofía cercana a un prototipo de competición.",
+tags:["V12","Carbono","Hypercar"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Aston%20Martin%20Valkyrie.jpg"
+},
+
+{
+id:30,
+brand:"Aston Martin",
+name:"DBS Superleggera",
+type:"Gran Turismo",
+engine:"V12 5.2L Biturbo",
+power:"725 CV",
+speed:"340 km/h",
+accel:"3.4 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2018",
+fuel:"Gasolina",
+description:"Un gran turismo británico con un enorme V12 biturbo y una estética muy característica.",
+tags:["V12","GT","Británico"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Aston%20Martin%20DBS%20Superleggera.jpg"
+},
+
+{
+id:31,
+brand:"Aston Martin",
+name:"DB5",
+type:"Clásico",
+engine:"6 cilindros 4.0L",
+power:"282 CV",
+speed:"233 km/h",
+accel:"8.0 s",
+drive:"Trasera",
+body:"Coupé",
+year:"1963",
+fuel:"Gasolina",
+description:"Uno de los coches británicos más famosos de la historia y estrechamente relacionado con James Bond.",
+tags:["Clásico","Bond","GT"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Aston%20Martin%20DB5.jpg"
+},
+
+/* MERCEDES */
+
+{
+id:32,
+brand:"Mercedes",
+name:"AMG GT Black Series",
+type:"Supercar",
+engine:"V8 4.0L Biturbo",
+power:"730 CV",
+speed:"325 km/h",
+accel:"3.2 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2020",
+fuel:"Gasolina",
+description:"La versión Black Series lleva el Mercedes-AMG GT a un nivel especialmente radical.",
+tags:["V8","Black Series","AMG"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercedes-AMG%20GT%20Black%20Series.jpg"
+},
+
+{
+id:33,
+brand:"Mercedes",
+name:"SLS AMG",
+type:"Supercar",
+engine:"V8 6.2L",
+power:"571 CV",
+speed:"317 km/h",
+accel:"3.8 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2010",
+fuel:"Gasolina",
+description:"Famoso por su enorme V8 atmosférico y sus características puertas de ala de gaviota.",
+tags:["V8","Gullwing","AMG"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercedes-Benz%20SLS%20AMG.jpg"
+},
+
+{
+id:34,
+brand:"Mercedes",
+name:"AMG One",
+type:"Hypercar",
+engine:"V6 1.6L Turbo + eléctricos",
+power:"1.063 CV",
+speed:"352 km/h",
+accel:"2.9 s",
+drive:"Integral",
+body:"Coupé",
+year:"2022",
+fuel:"Híbrido",
+description:"El AMG One traslada tecnología inspirada en la Fórmula 1 a un automóvil de carretera.",
+tags:["F1","V6","Híbrido"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercedes-AMG%20One.jpg"
+},
+
+/* BMW */
+
+{
+id:35,
+brand:"BMW",
+name:"M4 CSL",
+type:"Track Car",
+engine:"6 cilindros 3.0L Biturbo",
+power:"550 CV",
+speed:"307 km/h",
+accel:"3.7 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2022",
+fuel:"Gasolina",
+description:"Una versión muy enfocada al rendimiento del BMW M4 con reducción de peso y modificaciones de chasis.",
+tags:["M","CSL","Biturbo"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW%20M4%20CSL.jpg"
+},
+
+{
+id:36,
+brand:"BMW",
+name:"M3",
+type:"Deportivo",
+engine:"6 cilindros 3.0L Biturbo",
+power:"510 CV",
+speed:"290 km/h",
+accel:"3.5 s",
+drive:"Trasera / Integral",
+body:"Berlina",
+year:"2021",
+fuel:"Gasolina",
+description:"Uno de los modelos deportivos más importantes de BMW y una referencia dentro de las berlinas de altas prestaciones.",
+tags:["M3","Berlina","BMW"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW%20M3.jpg"
+},
+
+{
+id:37,
+brand:"BMW",
+name:"i8",
+type:"Híbrido deportivo",
+engine:"3 cilindros 1.5L + eléctrico",
+power:"374 CV",
+speed:"250 km/h",
+accel:"4.4 s",
+drive:"Integral",
+body:"Coupé",
+year:"2014",
+fuel:"Híbrido enchufable",
+description:"El i8 apostó por un diseño futurista y una arquitectura híbrida muy diferente a la de los deportivos tradicionales.",
+tags:["Híbrido","Futurista","BMW"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW%20i8.jpg"
+},
+
+/* AUDI */
+
+{
+id:38,
+brand:"Audi",
+name:"R8 V10",
+type:"Supercar",
+engine:"V10 5.2L",
+power:"620 CV",
+speed:"331 km/h",
+accel:"3.1 s",
+drive:"Integral",
+body:"Coupé",
+year:"2015",
+fuel:"Gasolina",
+description:"El Audi R8 llevó un motor V10 atmosférico a un deportivo que también destacaba por su facilidad de uso diario.",
+tags:["V10","Quattro","Audi"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Audi%20R8%20V10.jpg"
+},
+
+{
+id:39,
+brand:"Audi",
+name:"RS6 Avant",
+type:"Superfamiliar",
+engine:"V8 4.0L Biturbo",
+power:"600 CV",
+speed:"305 km/h",
+accel:"3.6 s",
+drive:"Integral",
+body:"Familiar",
+year:"2019",
+fuel:"Gasolina",
+description:"Una familiar capaz de ofrecer prestaciones de superdeportivo manteniendo una gran practicidad.",
+tags:["V8","Familiar","Quattro"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Audi%20RS6%20Avant.jpg"
+},
+
+/* FORD */
+
+{
+id:40,
+brand:"Ford",
+name:"GT",
+type:"Supercar",
+engine:"V6 3.5L Biturbo",
+power:"660 CV",
+speed:"348 km/h",
+accel:"3.0 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2017",
+fuel:"Gasolina",
+description:"El Ford GT moderno recuperó el espíritu de competición del legendario GT40.",
+tags:["V6","Le Mans","Carbono"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ford%20GT%202017.jpg"
+},
+
+{
+id:41,
+brand:"Ford",
+name:"Mustang Shelby GT500",
+type:"Muscle Car",
+engine:"V8 5.2L Supercharged",
+power:"760 CV",
+speed:"290 km/h",
+accel:"3.5 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2020",
+fuel:"Gasolina",
+description:"La versión más extrema del Mustang moderno incorpora un potente V8 sobrealimentado.",
+tags:["V8","Muscle","Shelby"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ford%20Mustang%20Shelby%20GT500.jpg"
+},
+
+/* KOENIGSEGG */
+
+{
+id:42,
+brand:"Koenigsegg",
+name:"Jesko",
+type:"Hypercar",
+engine:"V8 5.0L Biturbo",
+power:"1.600 CV",
+speed:"500+ km/h*",
+accel:"≈2.5 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2019",
+fuel:"Gasolina",
+description:"El Jesko es uno de los proyectos más extremos de Koenigsegg, desarrollado alrededor de un potente V8 biturbo.",
+tags:["V8","1600 CV","Hypercar"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Koenigsegg%20Jesko.jpg"
+},
+
+{
+id:43,
+brand:"Koenigsegg",
+name:"Agera RS",
+type:"Hypercar",
+engine:"V8 5.0L Biturbo",
+power:"1.160 CV",
+speed:"447 km/h",
+accel:"≈2.8 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2015",
+fuel:"Gasolina",
+description:"El Agera RS se hizo famoso por sus extraordinarias cifras de velocidad máxima.",
+tags:["V8","Record","Hypercar"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Koenigsegg%20Agera%20RS.jpg"
+},
+
+/* PAGANI */
+
+{
+id:44,
+brand:"Pagani",
+name:"Huayra",
+type:"Hypercar",
+engine:"V12 6.0L Biturbo",
+power:"730 CV",
+speed:"383 km/h",
+accel:"3.0 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2012",
+fuel:"Gasolina",
+description:"El Huayra combina ingeniería extrema con un diseño artesanal muy característico de Pagani.",
+tags:["V12","Artesanal","Carbono"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Pagani%20Huayra.jpg"
+},
+
+{
+id:45,
+brand:"Pagani",
+name:"Zonda",
+type:"Hypercar",
+engine:"V12 7.0L",
+power:"555 CV",
+speed:"350 km/h",
+accel:"3.7 s",
+drive:"Trasera",
+body:"Coupé",
+year:"1999",
+fuel:"Gasolina",
+description:"El Zonda fue el automóvil que puso a Pagani en el mapa de los fabricantes de hypercars más exclusivos.",
+tags:["V12","Artesanal","Icono"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Pagani%20Zonda.jpg"
+},
+
+/* MAS ICONOS */
+
+{
+id:46,
+brand:"Nissan",
+name:"GT-R",
+type:"Supercar",
+engine:"V6 3.8L Biturbo",
+power:"570 CV",
+speed:"315 km/h",
+accel:"2.8 s",
+drive:"Integral",
+body:"Coupé",
+year:"2007",
+fuel:"Gasolina",
+description:"El GT-R se ganó el apodo de Godzilla gracias a su impresionante rendimiento y tecnología.",
+tags:["V6","AWD","Godzilla"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Nissan%20GT-R.jpg"
+},
+
+{
+id:47,
+brand:"Toyota",
+name:"GR Supra",
+type:"Deportivo",
+engine:"6 cilindros 3.0L Turbo",
+power:"340 CV",
+speed:"250 km/h",
+accel:"4.3 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2019",
+fuel:"Gasolina",
+description:"El Supra recuperó uno de los nombres más famosos de Toyota dentro del mundo de los deportivos.",
+tags:["Turbo","JDM","Supra"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyota%20GR%20Supra.jpg"
+},
+
+{
+id:48,
+brand:"Dodge",
+name:"Challenger SRT Hellcat",
+type:"Muscle Car",
+engine:"V8 6.2L Supercharged",
+power:"717 CV",
+speed:"320 km/h",
+accel:"3.6 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2015",
+fuel:"Gasolina",
+description:"Un muscle car americano caracterizado por su enorme V8 sobrealimentado.",
+tags:["V8","Muscle","Hellcat"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Dodge%20Challenger%20SRT%20Hellcat.jpg"
+},
+
+{
+id:49,
+brand:"Chevrolet",
+name:"Corvette C8",
+type:"Supercar",
+engine:"V8 6.2L",
+power:"495 CV",
+speed:"312 km/h",
+accel:"2.9 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2020",
+fuel:"Gasolina",
+description:"La octava generación del Corvette introdujo por primera vez un diseño de motor central en la saga de producción.",
+tags:["V8","Motor central","American"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Chevrolet%20Corvette%20C8.jpg"
+},
+
+{
+id:50,
+brand:"Lexus",
+name:"LFA",
+type:"Supercar",
+engine:"V10 4.8L",
+power:"560 CV",
+speed:"325 km/h",
+accel:"3.7 s",
+drive:"Trasera",
+body:"Coupé",
+year:"2010",
+fuel:"Gasolina",
+description:"El Lexus LFA es conocido por su construcción de fibra de carbono y por el sonido de su V10 atmosférico.",
+tags:["V10","Carbono","JDM"],
+image:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lexus%20LFA.jpg"
+}
+
+];
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+const grid = document.getElementById("carsGrid");
+const search = document.getElementById("search");
+const resultsText = document.getElementById("resultsText");
+const empty = document.getElementById("empty");
+
+let currentBrand = "Todos";
+
+let favorites =
+    JSON.parse(localStorage.getItem("velocityFavorites")) || [];
+
+
+/* =========================================================
+   IMAGEN FALLBACK
+========================================================= */
+
+function imageFallback(img){
+
+    img.onerror = function(){
+
+        this.onerror = null;
+
+        this.src =
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80";
+
+    };
+
+}
+
+
+/* =========================================================
+   RENDER
+========================================================= */
+
+function renderCars(){
+
+    const text =
+        search.value.toLowerCase().trim();
+
+    const filtered = cars.filter(car => {
+
+        const matchesSearch =
+            car.name.toLowerCase().includes(text) ||
+            car.brand.toLowerCase().includes(text) ||
+            car.type.toLowerCase().includes(text);
+
+        const matchesBrand =
+            currentBrand === "Todos" ||
+            car.brand === currentBrand;
+
+        return matchesSearch && matchesBrand;
+
+    });
+
+
+    grid.innerHTML = "";
+
+
+    filtered.forEach(car => {
+
+        const liked =
+            favorites.includes(car.id);
+
+        const card = document.createElement("article");
+
+        card.className = "car-card";
+
+        card.onclick = () => openModal(car.id);
+
+
+        card.innerHTML = `
+
+            <div class="car-image">
+
+                <img
+                    src="${car.image}"
+                    alt="${car.brand} ${car.name}"
+                    loading="lazy"
+                    onerror="imageFallback(this)"
+                >
+
+                <div class="rank">
+                    #${String(car.id).padStart(2,"0")}
+                </div>
+
+                <button
+                    class="heart ${liked ? "liked":""}"
+                    onclick="toggleFavorite(event,${car.id})"
+                >
+                    ${liked ? "♥" : "♡"}
+                </button>
+
+                <div class="car-info">
+
+                    <div class="brand">
+                        ${car.brand}
+                    </div>
+
+                    <div class="car-name">
+                        ${car.name}
+                    </div>
+
+                    <div class="car-type">
+                        ${car.type}
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <div class="hp">
+                            <strong>${car.power}</strong>
+                        </div>
+
+                        <div class="more">
+                            VER FICHA →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+
+    resultsText.textContent =
+        `${filtered.length} resultado${filtered.length !== 1 ? "s":""}`;
+
+    empty.style.display =
+        filtered.length === 0 ? "block":"none";
+
+}
+
+
+/* =========================================================
+   FAVORITOS
+========================================================= */
+
+function toggleFavorite(event,id){
+
+    event.stopPropagation();
+
+    if(favorites.includes(id)){
+
+        favorites =
+            favorites.filter(x => x !== id);
+
+    }else{
+
+        favorites.push(id);
+
+    }
+
+    localStorage.setItem(
+        "velocityFavorites",
+        JSON.stringify(favorites)
+    );
+
+    updateFavoriteCount();
+
+    renderCars();
+
+}
+
+
+function updateFavoriteCount(){
+
+    document.getElementById("favoriteCount")
+        .textContent = favorites.length;
+
+}
+
+
+function showFavorites(){
+
+    currentBrand = "Todos";
+
+    document.querySelectorAll(".filter")
+        .forEach(button =>
+            button.classList.remove("active")
+        );
+
+    document.querySelector('[data-brand="Todos"]')
+        .classList.add("active");
+
+
+    search.value = "";
+
+
+    const favoriteCars =
+        cars.filter(car => favorites.includes(car.id));
+
+    grid.innerHTML = "";
+
+
+    favoriteCars.forEach(car => {
+
+        const card =
+            document.createElement("article");
+
+        card.className = "car-card";
+
+        card.onclick =
+            () => openModal(car.id);
+
+        card.innerHTML = `
+
+            <div class="car-image">
+
+                <img
+                    src="${car.image}"
+                    alt="${car.brand} ${car.name}"
+                    loading="lazy"
+                    onerror="imageFallback(this)"
+                >
+
+                <div class="rank">
+                    ♥ FAVORITO
+                </div>
+
+                <button
+                    class="heart liked"
+                    onclick="toggleFavorite(event,${car.id})"
+                >
+                    ♥
+                </button>
+
+                <div class="car-info">
+
+                    <div class="brand">
+                        ${car.brand}
+                    </div>
+
+                    <div class="car-name">
+                        ${car.name}
+                    </div>
+
+                    <div class="car-type">
+                        ${car.type}
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <div class="hp">
+                            <strong>${car.power}</strong>
+                        </div>
+
+                        <div class="more">
+                            VER FICHA →
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+
+    resultsText.textContent =
+        `${favoriteCars.length} favoritos`;
+
+    empty.style.display =
+        favoriteCars.length === 0 ? "block":"none";
+
+    document.getElementById("coches")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function openModal(id){
+
+    const car =
+        cars.find(x => x.id === id);
+
+    if(!car) return;
+
+
+    document.getElementById("modalImage").src =
+        car.image;
+
+    document.getElementById("modalImage").alt =
+        `${car.brand} ${car.name}`;
+
+    document.getElementById("modalBrand").textContent =
+        car.brand;
+
+    document.getElementById("modalTitle").textContent =
+        car.name;
+
+    document.getElementById("modalDescription").textContent =
+        car.description;
+
+    document.getElementById("modalEngine").textContent =
+        car.engine;
+
+    document.getElementById("modalPower").textContent =
+        car.power;
+
+    document.getElementById("modalSpeed").textContent =
+        car.speed;
+
+    document.getElementById("modalAccel").textContent =
+        car.accel;
+
+    document.getElementById("modalDrive").textContent =
+        car.drive;
+
+    document.getElementById("modalBody").textContent =
+        car.body;
+
+    document.getElementById("modalYear").textContent =
+        car.year;
+
+    document.getElementById("modalFuel").textContent =
+        car.fuel;
+
+
+    document.getElementById("modalTags").innerHTML =
+        car.tags.map(tag =>
+            `<span class="tag">${tag}</span>`
+        ).join("");
+
+
+    document.getElementById("modal")
+        .classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeModal(){
+
+    document.getElementById("modal")
+        .classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================================================
+   CERRAR MODAL
+========================================================= */
+
+document.getElementById("modal")
+    .addEventListener("click",function(e){
+
+        if(e.target === this){
+            closeModal();
+        }
+
+    });
+
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape"){
+        closeModal();
+    }
+
+});
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+search.addEventListener(
+    "input",
+    renderCars
+);
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+document.querySelectorAll(".filter")
+    .forEach(button => {
+
+        button.addEventListener("click",function(){
+
+            document.querySelectorAll(".filter")
+                .forEach(x =>
+                    x.classList.remove("active")
+                );
+
+            this.classList.add("active");
+
+            currentBrand =
+                this.dataset.brand;
+
+            renderCars();
+
+        });
+
+    });
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+document.getElementById("totalCars")
+    .textContent = cars.length;
+
+updateFavoriteCount();
+
+renderCars();
+
+
+/* =========================================================
+   LOADING SCREEN
+========================================================= */
+
+window.addEventListener("load",function(){
+
+    setTimeout(() => {
+
+        document.getElementById("loading")
+            .classList.add("hide");
+
+    },700);
+
+});
+
+</script>
+
+</body>
+</html>
